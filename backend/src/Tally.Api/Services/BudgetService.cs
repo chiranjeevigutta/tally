@@ -55,7 +55,7 @@ public class BudgetService(AppDbContext db) : IBudgetService
             budget = new Budget { UserId = userId, CategoryId = request.CategoryId, Year = request.Year, Month = request.Month };
             db.Budgets.Add(budget);
         }
-        budget.Limit = Math.Round(request.Limit, 2);
+        budget.Limit = Math.Round(request.Limit, 2, MidpointRounding.AwayFromZero);
         await db.SaveChangesAsync();
 
         var lines = await GetMonthAsync(userId, request.Year, request.Month);

@@ -109,7 +109,7 @@ public class ExpenseService(AppDbContext db) : IExpenseService
 
     private static void Apply(Expense expense, SaveExpenseRequest request)
     {
-        expense.Amount = Math.Round(request.Amount, 2);
+        expense.Amount = Math.Round(request.Amount, 2, MidpointRounding.AwayFromZero);
         expense.Date = request.Date;
         expense.Description = request.Description.Trim();
         expense.Notes = string.IsNullOrWhiteSpace(request.Notes) ? null : request.Notes.Trim();
