@@ -1,0 +1,20 @@
+## .NET
+bin/
+obj/
+*.user
+.vs/
+TestResults/
+*.db
+*.db-shm
+*.db-wal
+backend/src/Tally.Api/wwwroot/
+
+## Node
+node_modules/
+frontend/dist/
+
+## Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
