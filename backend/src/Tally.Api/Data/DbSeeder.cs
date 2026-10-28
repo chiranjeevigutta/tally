@@ -44,7 +44,7 @@ public static class DbSeeder
         }
 
         await EnsureUserAsync(users, AdminEmail, AdminPassword, "Avery Admin", Roles.Admin);
-        var demo = await EnsureUserAsync(users, DemoEmail, DemoPassword, "Jordan Demo", Roles.User);
+        var demo = await EnsureUserAsync(users, DemoEmail, DemoPassword, "Chiranjeevi Gutta", Roles.User);
 
         if (!await db.Expenses.AnyAsync(e => e.UserId == demo.Id))
             await SeedDemoSpendingAsync(db, demo.Id, today ?? DateOnly.FromDateTime(DateTime.Today));
